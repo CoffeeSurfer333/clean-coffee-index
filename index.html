@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Clean Coffee Index | Every coffee with a lab report, in one place</title>
+<meta name="description" content="An independent index of coffee brands that test for mold, mycotoxins, pesticides and heavy metals, with a link to each brand's lab proof. A Dream Pursuit directory.">
+<meta property="og:title" content="Clean Coffee Index">
+<meta property="og:description" content="Every coffee with a lab report, in one place.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--canvas:#14100D;--ink:#F5EDE3;--sub:#CDBFAE;--muted:#A8968A;--line:rgba(255,255,255,.09);--white:#1E1813;--cream:#F8ECD3;--orange:#E08A4E;--orange-h:#EA9A60;--dark:#1A120C;
+--pass-bg:rgba(34,197,94,.12);--pass-line:rgba(34,197,94,.38);--pass-ink:#86EFAC;--cert-bg:rgba(129,140,248,.14);--cert-line:rgba(129,140,248,.4);--cert-ink:#C7D2FE;--says-bg:rgba(255,255,255,.06);--says-line:rgba(255,255,255,.16);--says-ink:#D6CEC5;
+--serif:'Cormorant Garamond',Georgia,serif;--sans:Inter,system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif);font-weight:500}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:999px;padding:12px 22px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid transparent;cursor:pointer;font-family:var(--sans);transition:transform .2s,background .2s}
+.pill:hover{transform:translateY(-1px)}
+.pill-dark{background:var(--orange);color:var(--dark)}.pill-dark:hover{background:var(--orange-h)}
+.pill-light{background:rgba(255,255,255,.08);color:var(--ink);border-color:rgba(255,255,255,.22)}
+.pill-outline{background:transparent;color:var(--ink);border-color:rgba(255,255,255,.3);padding:9px 18px;font-size:14px}
+/* nav */
+nav{position:absolute;top:0;left:0;right:0;z-index:5}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+nav .brand{font-family:var(--serif);font-size:24px;color:#fff;text-decoration:none;letter-spacing:.02em}
+nav .links{display:flex;gap:28px;align-items:center}
+nav .links a{color:#fff;text-decoration:none;font-size:15px;opacity:.92}
+nav .links .pill-outline{color:#fff;border-color:rgba(255,255,255,.6)}
+/* hero */
+.hero{position:relative;height:min(78vh,760px);min-height:560px;overflow:hidden;background:#3A2A1E}
+.hero-img{position:absolute;inset:-6% 0 0 0;background:url('img/hero-forest-lodge.jpg') 40% center/cover no-repeat;will-change:transform}
+@media (max-width:960px){.hero-img{background-image:url('img/hero-forest-lodge-960.jpg')}}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,13,.62) 0%,rgba(20,16,13,.18) 38%,rgba(20,16,13,0) 52%,rgba(20,16,13,.78) 100%)}
+.hero-word{position:absolute;top:11%;left:0;right:0;text-align:center;font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(64px,13vw,184px);line-height:.9;letter-spacing:.06em;margin:0;text-shadow:0 2px 24px rgba(0,0,0,.45),0 0 2px rgba(0,0,0,.25)}
+.hero-card{position:absolute;left:24px;bottom:28px;max-width:500px;background:rgba(20,16,13,.74);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.14);border-radius:18px;padding:24px 26px}
+.hero-card h1{font-family:var(--serif);font-weight:500;font-size:36px;line-height:1.08;margin:6px 0 6px}
+.hero-card p.lead{margin:0 0 14px;color:var(--sub);font-size:16px}
+.goals{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.goal{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);border-radius:999px;padding:10px 14px;font-size:15px;text-align:center;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:border-color .2s,transform .2s}
+.goal:hover{border-color:var(--orange);transform:translateY(-1px)}
+.hero-ctas{display:flex;gap:10px;flex-wrap:wrap}
+@media (min-width:1220px){.hero-card{left:calc((100vw - 1160px)/2 + 24px)}}
+/* proof ladder */
+.ladder{padding-top:72px;padding-bottom:24px}
+.ladder h2,.section h2{font-family:var(--serif);font-weight:500;font-size:clamp(32px,4vw,46px);line-height:1.1;margin:8px 0 12px;max-width:760px}
+.ladder .intro{color:var(--sub);max-width:680px;margin:0 0 28px}
+.rungs{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rung{background:var(--white);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.3),0 10px 30px rgba(0,0,0,.25)}
+.rung p{margin:10px 0 0;color:var(--sub);font-size:15px}
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;border-radius:999px;padding:5px 11px;border:1px solid}
+.b-pub{background:var(--pass-bg);border-color:var(--pass-line);color:var(--pass-ink)}
+.b-cert{background:var(--cert-bg);border-color:var(--cert-line);color:var(--cert-ink)}
+.b-says{background:var(--says-bg);border-color:var(--says-line);color:var(--says-ink)}
+/* list */
+.section{padding-top:64px;padding-bottom:64px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 26px}
+.chip{border:1px solid rgba(255,255,255,.22);background:transparent;border-radius:999px;padding:9px 16px;font-size:15px;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:all .2s}
+.chip[aria-pressed="true"]{background:var(--orange);color:var(--dark);border-color:var(--orange)}
+.count{color:var(--muted);font-size:15px;margin:-10px 0 18px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column;box-shadow:0 1px 2px rgba(0,0,0,.3),0 12px 32px rgba(0,0,0,.28);transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-4px);border-color:rgba(224,138,78,.45);box-shadow:0 2px 4px rgba(0,0,0,.35),0 20px 44px rgba(0,0,0,.4)}
+.card h3{font-family:var(--serif);font-weight:500;font-size:28px;line-height:1.1;margin:12px 0 4px}
+.card .lab{font-size:14px;color:var(--muted);margin:0 0 12px}
+.card .tests{font-size:15px;color:var(--sub);margin:0 0 14px}
+.card .tests b{color:var(--ink);font-weight:500}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 16px}
+.tag{font-size:13px;background:rgba(255,255,255,.05);border:1px solid var(--line);border-radius:999px;padding:4px 10px;color:var(--sub)}
+.note{font-size:14px;color:var(--muted);margin:0 0 16px}
+.card .actions{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap}
+.card .actions .pill{padding:10px 16px;font-size:14px}
+.checked{font-size:13px;color:var(--muted);margin-top:12px}
+/* quiz */
+.quiz{background:var(--white);border:1px solid var(--line);border-radius:22px;padding:34px;box-shadow:0 1px 2px rgba(0,0,0,.3),0 16px 44px rgba(0,0,0,.3)}
+.bar{height:6px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;margin:6px 0 22px}
+.bar span{display:block;height:100%;width:25%;background:var(--orange);border-radius:99px;transition:width .4s}
+.q h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:0 0 16px;line-height:1.15}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.opt{text-align:left;background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:16px;cursor:pointer;font-family:var(--sans);color:var(--ink);transition:border-color .2s,transform .2s}
+.opt:hover{border-color:var(--orange);transform:translateY(-1px)}
+.opt small{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.picks{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px}
+.quiz-foot{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:14px;color:var(--muted)}
+.linkbtn{background:none;border:none;color:var(--ink);text-decoration:underline;cursor:pointer;font-size:14px;font-family:var(--sans)}
+/* method */
+.method{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:22px}
+.step{border-top:1px solid rgba(255,255,255,.2);padding-top:16px}
+.step .n{font-family:var(--serif);font-size:30px;color:var(--muted)}
+.step p{margin:4px 0 0;color:var(--sub);font-size:15px}
+/* band */
+.band{position:relative;height:min(70vh,620px);min-height:420px;overflow:hidden;margin:24px 0}
+.band-img{position:absolute;inset:-6% 0;background:url('img/band-sea-stacks.jpg') 30% 88%/cover no-repeat;will-change:transform}
+@media (max-width:960px){.band-img{background-image:url('img/band-sea-stacks-960.jpg')}}
+.band::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,16,13,.6) 0%,rgba(20,16,13,.12) 42%,rgba(20,16,13,0) 70%,rgba(20,16,13,.25) 100%)}
+.band-text{position:absolute;z-index:2;left:0;right:0;top:12%;text-align:center;padding:0 24px}
+.band-text p{font-family:var(--serif);font-weight:500;color:#fff;font-size:clamp(30px,4.4vw,56px);line-height:1.1;margin:0 auto;max-width:900px;text-shadow:0 2px 20px rgba(0,0,0,.45)}
+.band-text span{display:block;margin-top:12px;color:#F3E6D6;font-size:16px;font-family:var(--sans)}
+/* featured */
+.feature{position:relative;overflow:hidden;background:radial-gradient(ellipse 46% 62% at 50% 46%,rgba(20,16,13,.5),rgba(20,16,13,0) 100%),linear-gradient(180deg,rgba(20,16,13,.45),rgba(20,16,13,.7)),url('img/featured-blue-hour.jpg') center/cover no-repeat;border:1px solid rgba(224,138,78,.25);color:var(--ink);border-radius:24px;padding:56px 40px;text-align:center}
+.feature h2{color:#fff;margin:10px auto 12px}
+.feature p{color:#F1E7DA;text-shadow:0 1px 12px rgba(0,0,0,.55);max-width:620px;margin:0 auto 24px}
+.feature .eyebrow{color:#C9B9A6}
+.feature .price{font-family:var(--serif);font-size:56px;color:#fff;line-height:1;margin:0 auto 6px}
+.feature ul{list-style:none;padding:0;margin:0 auto 26px;max-width:460px;text-align:left}
+.feature li{padding:8px 0;border-bottom:1px solid rgba(255,255,255,.16);font-size:16px;color:#F7F0E6;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+.feature li::before{content:"✓";margin-right:10px;color:var(--cream)}
+
+.micro{font-size:14px;color:#C9B9A6;margin-top:12px}
+/* footer */
+footer{padding:56px 0 48px;color:var(--sub);font-size:15px}
+footer .disc{max-width:760px}
+.dp{display:inline-block;margin-top:28px;font-family:var(--serif);letter-spacing:.42em;font-size:15px;color:var(--ink);text-decoration:none;border-top:1px solid var(--ink);padding-top:8px}
+@media (min-width:641px){nav .brand{font-size:28px}}
+@media (max-width:640px){.lg-br{display:none}}
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero-img{transform:none!important}html{scroll-behavior:auto}}
+@media (max-width:900px){.grid,.rungs{grid-template-columns:1fr 1fr}.method{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){
+ .band{height:460px;min-height:0}
+ .band-img{background-position:24% 90%}
+ .band-text{top:9%}
+ nav .links a:not(.pill){display:none}
+ .hero{height:auto;min-height:0;padding:0 0 8px;background:var(--canvas)}
+ .hero-img{position:relative;inset:auto;height:430px;background-position:92% center!important;transform:none!important}
+ .hero-shade{bottom:auto;height:430px}
+ .hero-word{position:absolute;top:104px;font-size:clamp(56px,17vw,96px);margin:0}
+ .hero-card{position:relative;left:auto;bottom:auto;margin:-28px 16px 16px;max-width:none;padding:20px}
+ .hero-card h1{font-size:30px}
+ .grid,.rungs,.picks,.opts,.method{grid-template-columns:1fr}
+ .quiz{padding:24px}
+ .feature{padding:40px 22px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+ <div class="wrap">
+  <a class="brand" href="#top">Clean Coffee Index</a>
+  <div class="links">
+   <a href="#list">The list</a>
+   <a href="#method">How we check</a>
+   <a class="pill pill-outline" href="#featured">Get featured</a>
+  </div>
+ </div>
+</nav>
+
+<header class="hero" id="top">
+ <div class="hero-img" id="heroImg" role="img" aria-label="A cup of black coffee and a glass carafe on a wood counter in a forest lodge at golden hour"></div>
+ <div class="hero-shade"></div>
+ <p class="hero-word" aria-hidden="true">CLEAN</p>
+ <div class="hero-card">
+  <span class="eyebrow">Independent · Checked Nov 2026</span>
+  <h1>Every coffee with a lab report, in one place.</h1>
+  <p class="lead">What matters most to you?</p>
+  <div class="goals">
+   <button class="goal" data-filter="pub">A report I can read</button>
+   <button class="goal" data-filter="decaf">Decaf</button>
+   <button class="goal" data-filter="organic">USDA Organic</button>
+   <button class="goal" data-filter="lowacid">Low-acid</button>
+  </div>
+  <div class="hero-ctas">
+   <a class="pill pill-dark" href="#match">Find my coffee · 4 questions</a>
+   <a class="pill pill-light" href="#list">See the list</a>
+  </div>
+ </div>
+</header>
+
+<section class="ladder wrap reveal" id="proof">
+ <span class="eyebrow">The proof ladder</span>
+ <h2>"Mold-free" is a claim.<br class="lg-br"> A lab report is proof.</h2>
+ <p class="intro">No government certification exists for mold-free or low-acid coffee. So every brand here gets one of three proof levels, based on what you can actually check yourself.</p>
+ <div class="rungs">
+  <div class="rung"><span class="badge b-pub">● Report published</span><p>The brand posts its lab results. You can open them and read the numbers.</p></div>
+  <div class="rung"><span class="badge b-cert">● Third-party certified</span><p>An outside group tested it and certified it. The detailed numbers stay private.</p></div>
+  <div class="rung"><span class="badge b-says">● Brand says tested</span><p>The brand says it tests. We haven't found a public report yet.</p></div>
+ </div>
+</section>
+
+<section class="section wrap" id="list">
+ <div class="reveal">
+  <span class="eyebrow">The list</span>
+  <h2>Lab-tested coffee brands</h2>
+ </div>
+ <div class="filters" role="group" aria-label="Filter brands">
+  <button class="chip" data-f="all" aria-pressed="true">All</button>
+  <button class="chip" data-f="pub" aria-pressed="false">Report published</button>
+  <button class="chip" data-f="decaf" aria-pressed="false">Decaf</button>
+  <button class="chip" data-f="organic" aria-pressed="false">USDA Organic</button>
+  <button class="chip" data-f="lowacid" aria-pressed="false">Low-acid</button>
+  <button class="chip" data-f="dark" aria-pressed="false">Dark roast</button>
+ </div>
+ <p class="count" id="count"></p>
+ <div class="grid" id="grid"></div>
+</section>
+
+<section class="band" aria-label="Sea stacks at sunset with a cup of coffee">
+ <div class="band-img" id="bandImg"></div>
+ <div class="band-text reveal"><p>Know what's in the cup before you pour&nbsp;it.</p><span>Every listing links to the brand's own lab proof.</span></div>
+</section>
+
+<section class="section wrap" id="match">
+ <div class="quiz reveal">
+  <span class="eyebrow">Find my coffee</span>
+  <div class="bar"><span id="bar"></span></div>
+  <div id="quizBody"></div>
+ </div>
+</section>
+
+<section class="section wrap reveal" id="method">
+ <span class="eyebrow">How we check</span>
+ <h2>We read the lab page so you don't have to.</h2>
+ <div class="method">
+  <div class="step"><div class="n">01</div><p>We find each brand's own testing page or lab report.</p></div>
+  <div class="step"><div class="n">02</div><p>We note which lab ran it and what they tested for.</p></div>
+  <div class="step"><div class="n">03</div><p>We give it a proof level and link you straight to the source.</p></div>
+  <div class="step"><div class="n">04</div><p>We re-check and date every listing. Paid placement never changes a proof level.</p></div>
+ </div>
+</section>
+
+<section class="section wrap" id="featured">
+ <div class="feature reveal">
+  <span class="eyebrow">For roasters</span>
+  <h2>Put your lab report in front of buyers who read them.</h2>
+  <p>Shoppers here are already looking for tested coffee. A featured spot puts your roaster at the top of the list and in the match results.</p>
+  <p class="price">$99<span style="font-size:22px"> / month</span></p>
+  <ul>
+   <li>Top placement on the list, clearly labeled Featured</li>
+   <li>Shown first in matching quiz results</li>
+   <li>Your newest lab report linked on your card</li>
+  </ul>
+  <a class="pill pill-dark" id="stripeBtn" href="https://buy.stripe.com/4gMdR8fBxaRu1dk3NV5Ne04" target="_blank" rel="noopener">Get featured · $99/mo</a>
+  <p class="micro">Cancel anytime. Featured spots are labeled, and your proof level is set by your lab report, not your payment.</p>
+ </div>
+</section>
+
+<footer>
+ <div class="wrap">
+  <p class="disc"><b>Disclosure:</b> some links on this site are affiliate links. If you buy through them, we may earn a commission at no extra cost to you. It never changes a brand's proof level or order on the list.</p>
+  <p class="disc">This site shares what brands publish about their lab testing. It isn't medical advice and makes no health claims. Lab results apply to the batch tested, so check the brand's newest report before you buy.</p>
+  <a class="dp" href="https://dreampursuitstudio.com">DREAM PURSUIT</a>
+ </div>
+</footer>
+
+<script>
+const BRANDS=[
+{id:"naturalforce",name:"Natural Force Clean Coffee",url:"https://naturalforce.com",level:"pub",lab:"Eurofins (ISO/IEC 17025 accredited labs)",tests:"Mold, mycotoxins, pesticides, glyphosate, heavy metals, acrylamide, yeast",tags:["decaf","dark"],tagText:["Decaf available","Dark roast available"],note:"",source:"https://support.naturalforce.com/hc/en-us/articles/360022241334-Is-your-coffee-lab-tested-for-mold-toxins-and-pesticides"},
+{id:"purity",name:"Purity Coffee",url:"https://puritycoffee.com",level:"pub",lab:"Eurofins",tests:"Ochratoxin A, aflatoxins, yeast and mold, glyphosate, 500+ pesticide screen",tags:["organic","decaf"],tagText:["USDA Organic","Decaf (Calm)"],note:"Separate reports for contaminants and nutrients on each product page.",source:"https://purity-coffee-help-center.gorgias.help/en-US/is-purity-coffee-free-of-moldmycotoxins-250482"},
+{id:"danger",name:"Danger Coffee",url:"https://dangercoffee.com",level:"pub",lab:"IAS-accredited lab",tests:"13 mycotoxins plus 500+ chemical residues, including pesticides, herbicides and fungicides",tags:[],tagText:["Every batch tested (brand says)"],note:"Results and detection limits posted on the brand's testing page.",source:"https://dangercoffee.com/blogs/news/mold-mycotoxins-lab-testing"},
+{id:"balance",name:"Balance Coffee",url:"https://balancecoffee.co.uk",level:"pub",lab:"ACCREDIA-accredited lab (Europe)",tests:"500+ pesticides, mould, ochratoxin A, aflatoxins, acrylamide, heavy metals",tags:[],tagText:["UK roaster","Not certified organic"],note:"Results page shows the most recent batch tested.",source:"https://balancecoffee.co.uk/pages/mould-and-pesticides-independent-laboratory-test-result"},
+{id:"lovegrown",name:"Love Grown",url:"https://lovegrown.com",level:"cert",lab:"Clean Label Project Certified",tests:"200+ contaminants, including heavy metals and pesticide residues (per brand)",tags:["decaf","lowacid"],tagText:["Decaf available","Low-acid: brand says pH 5.5"],note:"First coffee brand to earn Clean Label Project Certification (brand says).",source:"https://lovegrown.com/pages/love-grown-coffee-clp"},
+{id:"fabula",name:"Fabula Coffee",url:"https://fabulacoffee.com",level:"says",lab:"Independent labs (not named on the page we checked)",tests:"350+ substances, including mold and mycotoxins (brand says)",tags:["organic","lowacid"],tagText:["USDA Organic","Low-acid (brand says)"],note:"Brand offers to send its lab reports on request.",source:"https://fabulacoffee.com/pages/our-coffee"},
+{id:"lifeboost",name:"Lifeboost Coffee",url:"https://lifeboostcoffee.com",level:"says",lab:"Third-party lab (not named on the page we checked)",tests:"Mold, mycotoxins, pesticides and chemicals, every batch (brand says)",tags:["organic","lowacid"],tagText:["USDA Organic","Low-acid (brand says)"],note:"",source:"https://get.lifeboostcoffee.com/toxin-tested-coffee"},
+{id:"freshroasted",name:"Fresh Roasted Coffee",url:"https://www.freshroastedcoffee.com",level:"says",lab:"Certified third-party food safety lab (brand says)",tests:"Mold, mycotoxins and pesticides",tags:["organic"],tagText:["USDA Organic","Espresso capsules and cold brew in tested line"],note:"Only coffees in its tested collection are covered.",source:"https://www.freshroastedcoffee.com/collections/mold-mycotoxin-tested"}
+];
+const LEVEL={pub:["b-pub","Report published"],cert:["b-cert","Third-party certified"],says:["b-says","Brand says tested"]};
+const ORDER={pub:0,cert:1,says:2};
+BRANDS.sort((a,b)=>ORDER[a.level]-ORDER[b.level]);
+const has=(b,f)=>f==="all"||(f==="pub"?b.level==="pub":b.tags.includes(f));
+function card(b){
+ const [cls,label]=LEVEL[b.level];
+ return `<article class="card reveal in">
+  <span class="badge ${cls}">● ${label}</span>
+  <h3>${b.name}</h3>
+  <p class="lab">${b.lab}</p>
+  <p class="tests"><b>Tested for:</b> ${b.tests}</p>
+  <div class="tags">${b.tagText.map(t=>`<span class="tag">${t}</span>`).join("")}</div>
+  ${b.note?`<p class="note">${b.note}</p>`:""}
+  <div class="actions">
+   <a class="pill pill-dark" href="${b.url}" target="_blank" rel="sponsored noopener">Visit roaster</a>
+   <a class="pill pill-light" href="${b.source}" target="_blank" rel="noopener">See lab proof</a>
+  </div>
+  <p class="checked">Checked Nov 2026</p>
+ </article>`;
+}
+const grid=document.getElementById("grid"),count=document.getElementById("count");
+function render(f){
+ const list=BRANDS.filter(b=>has(b,f));
+ grid.innerHTML=list.map(card).join("");
+ count.textContent=`${list.length} brand${list.length===1?"":"s"}`;
+ document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.f===f?"true":"false"));
+}
+document.querySelectorAll(".chip").forEach(c=>c.addEventListener("click",()=>render(c.dataset.f)));
+document.querySelectorAll(".goal").forEach(g=>g.addEventListener("click",()=>{render(g.dataset.filter);document.getElementById("list").scrollIntoView({behavior:"smooth"})}));
+render("all");
+
+/* quiz */
+const QS=[
+ {k:"proof",q:"How much proof do you want?",o:[["pub","A report I can open","Show me the numbers"],["cert","A seal is enough","Third-party certified is fine"],["any","Any testing","I'll trust the brand's word"]]},
+ {k:"decaf",q:"Decaf or regular?",o:[["decaf","Decaf",""],["any","Regular or either",""]]},
+ {k:"organic",q:"Does it need to be USDA Organic?",o:[["organic","Yes, organic only",""],["any","Nice to have",""]]},
+ {k:"lowacid",q:"Is low-acid important to you?",o:[["lowacid","Yes",""],["any","Not really",""]]}
+];
+let step=0,ans={};
+const body=document.getElementById("quizBody"),bar=document.getElementById("bar");
+function score(b){
+ let s=0;
+ const lv=ORDER[b.level];
+ if(ans.proof==="pub")s+=lv===0?6:lv===1?1:-2;else if(ans.proof==="cert")s+=lv<=1?4:0;else s+=2-lv;
+ ["decaf","organic","lowacid"].forEach(k=>{if(ans[k]===k)s+=b.tags.includes(k)?5:-3});
+ return s+(2-lv)*0.5;
+}
+function showQ(){
+ bar.style.width=((step+1)/QS.length*100)+"%";
+ const q=QS[step];
+ body.innerHTML=`<div class="q"><span class="eyebrow">Question ${step+1} of ${QS.length}</span><h3>${q.q}</h3><div class="opts">${q.o.map(o=>`<button class="opt" data-v="${o[0]}">${o[1]}${o[2]?`<small>${o[2]}</small>`:""}</button>`).join("")}</div></div>
+ <div class="quiz-foot"><span>Takes about 30 seconds</span>${step>0?`<button class="linkbtn" id="back">Back</button>`:""}</div>`;
+ body.querySelectorAll(".opt").forEach(b=>b.addEventListener("click",()=>{ans[q.k]=b.dataset.v;step++;step<QS.length?showQ():showPicks()}));
+ const back=document.getElementById("back");if(back)back.addEventListener("click",()=>{step--;showQ()});
+}
+function showPicks(){
+ bar.style.width="100%";
+ const top=[...BRANDS].sort((a,b)=>score(b)-score(a)).slice(0,2);
+ body.innerHTML=`<div class="q"><span class="eyebrow">Your top 2</span><h3>Your best matches, side by side</h3></div><div class="picks">${top.map(card).join("")}</div>
+ <div class="quiz-foot"><span>Picks are based on what each brand publishes.</span><button class="linkbtn" id="redo">Start over</button></div>`;
+ document.getElementById("redo").addEventListener("click",()=>{step=0;ans={};showQ()});
+}
+showQ();
+
+/* motion */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".reveal:not(.in)").forEach(el=>io.observe(el));
+const hero=document.getElementById("heroImg");
+if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&innerWidth>640){
+ const band=document.getElementById("bandImg");
+ addEventListener("scroll",()=>{const y=scrollY;if(y<900)hero.style.transform=`translateY(${y*0.18}px) scale(1.04)`;const r=band.parentElement.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){band.style.transform=`translateY(${Math.max(-26,Math.min(26,(r.top-innerHeight/2)*-0.05))}px)`}},{passive:true});
+}
+</script>
+</body>
+</html>
