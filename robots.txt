@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://coffeesurfer333.github.io/clean-coffee-index/sitemap.xml
